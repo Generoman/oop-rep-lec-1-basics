@@ -74,7 +74,15 @@ public class Car {
 
 
 
-    // CONSTRUCTOR:
+    // KONSTRUKTØRER:
+
+    public Car() {
+        this.topSpeed = 100;
+        this.acceleration = 10;
+        this.tires = Tires.SUMMER;
+        this.make = "car of unspecified make";
+        this.model = "and model";
+    }
 
     public Car(double topSpeed, double acceleration, Tires tires, String make, String model) {
 
@@ -93,13 +101,15 @@ public class Car {
 
 
 
-    // OTHER PUBLIC METHODS:
+    // ANDRE PUBLIC-METODER:
 
     public void drive(double distance) {
         if (distance < 0) {
+            // "\n" er bare der for at teksten skal komme på en ny linje og være litt lettere å lese i konsollen
             System.out.println("\nWhy do you want to drive " + distance + "km in reverse?");
         } else {
             double time = calculateTime(distance);
+            // "\n" er bare der for at teksten skal komme på en ny linje og være litt lettere å lese i konsollen
             System.out.println("\nOur " + make + " " + model + " covers " + distance + "km in " + time + " hours");
             System.out.println("...if there are no speed limits.");
         }
@@ -107,7 +117,7 @@ public class Car {
 
 
 
-    // PRIVATE METHODS:
+    // PRIVATE-METODER:
 
     private double calculateTime(double distance) {
 

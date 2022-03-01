@@ -2,8 +2,12 @@ public class TestingGrounds {
 
     public static void main(String[] args) {
 
-        Car myAwesomeCar = new Car(220.28, 7.5, Tires.SUMMER, "Honda", "Civic");
+        Car myNonSpecificCar = new Car();
 
-        myAwesomeCar.drive(150);
+        myNonSpecificCar.drive(250);
+
+        Car myTrustyCar = new Car(220.28, 7.5, Tires.SUMMER, "Honda", "Civic");
+
+        myTrustyCar.drive(250);
     }
 }
