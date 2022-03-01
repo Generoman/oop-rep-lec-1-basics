@@ -10,7 +10,7 @@ public class Car {
 
 
 
-    // GETTERS/SETTERS:
+    // GETTERE OG SETTERE:
 
     public double getTopSpeed() {
         return topSpeed;
