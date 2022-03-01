@@ -9,20 +9,6 @@ public class Car {
     private String model;
 
 
-    // CONSTRUCTOR:
-
-    public Car(double topSpeed, double acceleration, Tires tires, String make, String model) {
-
-        setTopSpeed(topSpeed);
-
-        setAcceleration(acceleration);
-
-        this.tires = tires;
-        this.make = make;
-        this.model = model;
-    }
-
-
 
     // GETTERS/SETTERS:
 
@@ -31,8 +17,14 @@ public class Car {
     }
 
     public void setTopSpeed(double topSpeed) {
+
+        // Toppfarta kan ikke være 0 eller negativ.
+        // Derfor er nedre grense satt på 0,1 km/t.
         if (topSpeed <= 0) {
             this.topSpeed = 0.1;
+        // Høyeste toppfart jeg kunne finne på en bil er 447,19 km/t.
+        // Derfor setter jeg øvre grense på 447.19 her.
+        // Siden Java er på engelsk, brukes punktum istedenfor komma i desimaltall.
         }else if (topSpeed > 447.19) {
             this.topSpeed = 447.19;
         } else {
@@ -45,6 +37,10 @@ public class Car {
     }
 
     public void setAcceleration(double acceleration) {
+
+        // Høyeste akselerasjon jeg kunne finne på en bil er 0-100 km/t på 2,3 sekunder.
+        // Derfor setter jeg en nedre grense på 2.3 her.
+        // Siden Java er på engelsk, brukes punktum istedenfor komma i desimaltall.
         if (acceleration < 2.3) {
             this.acceleration = 2.3;
         } else {
@@ -78,13 +74,34 @@ public class Car {
 
 
 
+    // CONSTRUCTOR:
+
+    public Car(double topSpeed, double acceleration, Tires tires, String make, String model) {
+
+        // setTopSpeed-metoden har en sjekk på om toppfarta er mulig.
+        // Derfor bruker jeg den istedenfor "this.topSpeed = topSpeed".
+        setTopSpeed(topSpeed);
+
+        // setAcceleration-metoden har en sjekk på om akselerasjonen er mulig.
+        // Derfor bruker jeg den istedenfor "this.acceleration = acceleration".
+        setAcceleration(acceleration);
+
+        this.tires = tires;
+        this.make = make;
+        this.model = model;
+    }
+
+
+
     // OTHER PUBLIC METHODS:
 
     public void drive(double distance) {
         if (distance < 0) {
-            System.out.println("Why do you want to drive in reverse?");
+            System.out.println("\nWhy do you want to drive " + distance + "km in reverse?");
         } else {
-            System.out.println("Our " + make + " " + model + " covers " + distance + "km in " + calculateTime() + " hours.");
+            double time = calculateTime(distance);
+            System.out.println("\nOur " + make + " " + model + " covers " + distance + "km in " + time + " hours");
+            System.out.println("...if there are no speed limits.");
         }
     }
 
@@ -92,12 +109,10 @@ public class Car {
 
     // PRIVATE METHODS:
 
-    private double calculateTime() {
+    private double calculateTime(double distance) {
 
-        // Denne delen av koden regner ut hvor lang tid bilen bruker på en gitt avstand.
-        // Den er ikke viktig for å forstå metoder, jeg måtte bare ha noe fungerende
-        // kode som et eksempel. Om dere ikke forstår denne delen, kan dere se bort fra den.
-        double time = (topSpeed * topSpeed)/(2 * acceleration)/360;
+        // Regner ut hvor lang tid bilen bruker (i timer) på en gitt avstand.
+        double time = distance/topSpeed;
 
         // Runder av til 2 desimaler
         time = (double) Math.round(time * 100)/100;
