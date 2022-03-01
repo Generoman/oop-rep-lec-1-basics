@@ -78,22 +78,32 @@ public class Car {
 
 
 
-    // OTHER METHODS:
+    // OTHER PUBLIC METHODS:
 
     public void drive(double distance) {
         if (distance < 0) {
             System.out.println("Why do you want to drive in reverse?");
         } else {
-
-            // Denne delen av koden regner ut hvor lang tid bilen bruker på en gitt avstand.
-            // Den er ikke viktig for å forstå metoder, jeg måtte bare ha noe fungerende
-            // kode som et eksempel. Om dere ikke forstår denne delen, kan dere se bort fra den.
-            double time = (topSpeed * topSpeed)/(2 * acceleration)/360;
-            time = (double) Math.round(time * 100)/100;
-
-
-            System.out.println("Our " + make + " " + model + " covers " + distance + "km in " + time + " hours.");
+            System.out.println("Our " + make + " " + model + " covers " + distance + "km in " + calculateTime() + " hours.");
         }
     }
+
+
+
+    // PRIVATE METHODS:
+
+    private double calculateTime() {
+
+        // Denne delen av koden regner ut hvor lang tid bilen bruker på en gitt avstand.
+        // Den er ikke viktig for å forstå metoder, jeg måtte bare ha noe fungerende
+        // kode som et eksempel. Om dere ikke forstår denne delen, kan dere se bort fra den.
+        double time = (topSpeed * topSpeed)/(2 * acceleration)/360;
+
+        // Runder av til 2 desimaler
+        time = (double) Math.round(time * 100)/100;
+
+        return time;
+    }
+
 
 }
