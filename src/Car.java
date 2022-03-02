@@ -111,11 +111,15 @@ public class Car {
 
     public void drive(double distance) {
         if (distance < 0) {
-            // "\n" er bare der for at teksten skal komme på en ny linje og være litt lettere å lese i konsollen
-            System.out.println("\nWhy do you want to drive " + distance*-1 + "km in reverse?");
+            // Hvis distansen er negativ, så vil jeg ikke regne ut tiden, så jeg printer en feilmelding til konsollen.
+            // "\n" er bare der for at teksten skal komme på en ny linje og være litt lettere å lese i konsollen.
+            System.out.println("\nWhy do you want to drive " + distance * -1 + "km in reverse?");
         } else {
+
+            // Kaller på calculateTime()-metoden for å regne ut hvor lang tid bilen bruker på distansen.
             double time = calculateTime(distance);
 
+            // Printer resultatet til konsollen ved hjelp av fields og time-variabelen.
             System.out.println("\nOur " + make + " " + model + " covers " + distance + "km in " + time + " hours");
             System.out.println("...if there are no speed limits.");
         }
