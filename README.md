@@ -46,6 +46,14 @@
   * Betyr at et field eller en metode er tilgjengelig overalt, så lenge det fins et objekt av klassen fieldet/metoden tilhører
 * `private`-nøkkelordet:
   * Betyr at et field eller en metode bare er tilgjengelig innenfor klassen den tilhører (se kodeeksempel)
+* `void`-nøkkelordet:
+  * Betyr at en metode ikke skal ha en returverdi
+* `static`-nøkkelordet:
+  * Betyr at en metode eller et field tilhører *klassen* og ikke *objektet*
+  * Det vil si at man kan hente ut verdien eller kjøre metoden uten å ha et objekt av klassen
+  * For å hente ut et field, skriver man `KlasseNavn.fieldNavn`
+  * For å kjøre en metode, skriver man `KlasseNavn.metodeNavn(parameter)`
+  * IntelliJ viser `static`-metoder i *kursiv*
 * Getters/Gettere:
   * Spesielle metoder som brukes for å hente ut verdiene i `private` fields 
   * Ikke alle `private` fields trenger gettere
@@ -62,6 +70,10 @@
   * En klasse kan ha mer enn en konstruktør (se kodeeksempel)
   * Om man ikke lager en konstruktør, vil en klasse alltid ha en tom konstruktør (ingen parametere)
   * Om man lager minst en konstruktør, vil den tomme konstruktøren ikke lenger finnes, men kan opprettes manuelt
+* `this`-nøkkelordet:
+  * Et selvrefererende nøkkelord
+  * Brukes når man f.eks. har en parameter med samme navn som et field, og ønsker å gjøre forskjell på de to i koden
+  * Hvis det står `this.id`, så betyr det "id-fieldet som tilhører dette objektet"
 * `new`-nøkkelordet:
   * Brukes når man skal opprette et objekt av en klasse gjennom en konstruktør (se kodeeksempel)
 * Enum:

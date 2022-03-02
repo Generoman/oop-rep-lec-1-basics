@@ -97,7 +97,7 @@ public class Car {
 
     public Car() {
         // I en konstruktør som ikke har parametere trenger vi ikke å bruke "this",
-        // siden vi ikke har en referanse med samme navn som et field
+        // siden vi ikke har en referanse (parameter eller lokal variabel) med samme navn som et field
         topSpeed = 100;
         acceleration = 10;
         tires = Tires.SUMMER;
@@ -115,7 +115,7 @@ public class Car {
             System.out.println("\nWhy do you want to drive " + distance*-1 + "km in reverse?");
         } else {
             double time = calculateTime(distance);
-            // "\n" er bare der for at teksten skal komme på en ny linje og være litt lettere å lese i konsollen
+
             System.out.println("\nOur " + make + " " + model + " covers " + distance + "km in " + time + " hours");
             System.out.println("...if there are no speed limits.");
         }
@@ -141,7 +141,7 @@ public class Car {
         double time = distance/topSpeed;
 
         // Runder av til 2 desimaler
-        // Se bort ifra "(double)" her, det vil bli forklart senere.
+        // Se bort ifra "(double)" her, det vil bli forklart i en senere forelesning.
         time = (double) Math.round(time * 100)/100;
 
         // Merk at "return time;" her har INGENTING å gjøre med "return time;" i getCurrentTime()-metoden.
