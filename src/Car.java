@@ -1,3 +1,5 @@
+import java.time.LocalDateTime;
+
 public class Car {
 
     // FIELDS:
@@ -75,14 +77,6 @@ public class Car {
 
     // KONSTRUKTØRER:
 
-    public Car() {
-        this.topSpeed = 100;
-        this.acceleration = 10;
-        this.tires = Tires.SUMMER;
-        this.make = "car of unspecified make";
-        this.model = "and model";
-    }
-
     public Car(double topSpeed, double acceleration, Tires tires, String make, String model) {
 
         // setTopSpeed-metoden har en sjekk på om toppfarta er mulig.
@@ -93,9 +87,22 @@ public class Car {
         // Derfor bruker jeg den istedenfor "this.acceleration = acceleration".
         setAcceleration(acceleration);
 
+        // "this" er et selvrefererende nøkkelord.
+        // "this.tires" betyr "tires-fieldet som tilhører denne klassen".
+        // Bare "tires" refererer til parameteren definert i metodesignaturen.
         this.tires = tires;
         this.make = make;
         this.model = model;
+    }
+
+    public Car() {
+        // I en konstruktør som ikke har parametere trenger vi ikke å bruke "this",
+        // siden vi ikke har en referanse med samme navn som et field
+        topSpeed = 100;
+        acceleration = 10;
+        tires = Tires.SUMMER;
+        make = "car of unspecified make";
+        model = "and model";
     }
 
 
@@ -105,13 +112,23 @@ public class Car {
     public void drive(double distance) {
         if (distance < 0) {
             // "\n" er bare der for at teksten skal komme på en ny linje og være litt lettere å lese i konsollen
-            System.out.println("\nWhy do you want to drive " + distance + "km in reverse?");
+            System.out.println("\nWhy do you want to drive " + distance*-1 + "km in reverse?");
         } else {
             double time = calculateTime(distance);
             // "\n" er bare der for at teksten skal komme på en ny linje og være litt lettere å lese i konsollen
             System.out.println("\nOur " + make + " " + model + " covers " + distance + "km in " + time + " hours");
             System.out.println("...if there are no speed limits.");
         }
+    }
+
+    // Eksempel på en static metode:
+    public static String getCurrentTime() {
+
+        String time = "\nI have no idea what time it is. I'm a car, not a clock!";
+
+        // Merk at "return time;" her har INGENTING å gjøre med "return time;" i calculateTime()-metoden.
+        // "time" i getCurrentTime()- og calculateTime()-metodene har fullstendig ulike verdier.
+        return time;
     }
 
 
@@ -124,10 +141,12 @@ public class Car {
         double time = distance/topSpeed;
 
         // Runder av til 2 desimaler
+        // Se bort ifra "(double)" her, det vil bli forklart senere.
         time = (double) Math.round(time * 100)/100;
 
+        // Merk at "return time;" her har INGENTING å gjøre med "return time;" i getCurrentTime()-metoden.
+        // "time" i getCurrentTime()- og calculateTime()-metodene har fullstendig ulike verdier.
         return time;
     }
-
 
 }

@@ -1,0 +1,5 @@
+Primitive datatyper i Java (W3Schools):
+https://www.w3schools.com/java/java_data_types.asp
+
+YouTube-kanal om Java:
+https://www.youtube.com/c/CodingwithJohn

@@ -27,12 +27,16 @@
   * Kan være `public` eller `private` (eller `protected` / `default`, men det overser vi nå)
   * Man får tilgang på et `public` field ved å skrive `objektNavn.fieldNavn`
   * For private fields må man bruke *gettere* og *settere* for å hente de inn eller forandre de
+  * Merk at fields i en klasse også kan inneholde objekter!
 * Methods/Metoder:
   * Kan sammenlignes med funksjoner i JavaScript
   * Tilhører en klasse, på samme måte som fields
   * Navngis med liten forbokstav
   * Kjøres ved å skrive `objektNavn.metodeNavn()`
   * Kan også være `public` eller `private` (eller `protected` / `default`, men det overser vi nå)
+* Method Signature/Metodesignatur:
+  * Kodelinja hvor man begynner å definere en metode
+  * Inneholder informasjon om en metode er `private`/`public`, om den er `static`, hvilken returtype den har (eller om den ikke returnerer noe - `void`) hva den heter, og hvilke parametere den har
 * `main`-metoden:
   * Kan sees på som inngansporten til programmet/applikasjonen vi skriver
   * Uten en `main`-metode, vet ikke Java hvor programmet skal starte
