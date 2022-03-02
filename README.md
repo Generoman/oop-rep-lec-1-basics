@@ -27,6 +27,7 @@
   * Kan være `public` eller `private` (eller `protected` / `default`, men det overser vi nå)
   * Man får tilgang på et `public` field ved å skrive `objektNavn.fieldNavn`
   * For private fields må man bruke *gettere* og *settere* for å hente de inn eller forandre de
+  * Merk at fields i en klasse også kan inneholde objekter!
 * Methods/Metoder:
   * Kan sammenlignes med funksjoner i JavaScript
   * Tilhører en klasse, på samme måte som fields
