@@ -33,6 +33,11 @@
   * Navngis med liten forbokstav
   * Kjøres ved å skrive `objektNavn.metodeNavn()`
   * Kan også være `public` eller `private` (eller `protected` / `default`, men det overser vi nå)
+* `main`-metoden:
+  * Kan sees på som inngansporten til programmet/applikasjonen vi skriver
+  * Uten en `main`-metode, vet ikke Java hvor programmet skal starte
+  * Kan ligge i en hvilken som helst klasse, trenger ikke å være i en `Main`- eller `Program`-klasse
+  * Tips: I IntelliJ kan man skrive "main" og trykke Enter for å få hele teksten `public static void main(String[] args {}`
 * `public`-nøkkelordet:
   * Betyr at et field eller en metode er tilgjengelig overalt, så lenge det fins et objekt av klassen fieldet/metoden tilhører
 * `private`-nøkkelordet:
