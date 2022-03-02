@@ -25,7 +25,7 @@
   * Kan ha ulike verdier for ulike objekter av samme klasse
   * Navngis med liten forbokstav
   * Kan være `public` eller `private` (eller `protected` / `default`, men det overser vi nå)
-  * Man får tilgang på et public field ved å skrive `objektNavn.fieldNavn`
+  * Man får tilgang på et `public` field ved å skrive `objektNavn.fieldNavn`
   * For private fields må man bruke *gettere* og *settere* for å hente de inn eller forandre de
 * Methods/Metoder:
   * Kan sammenlignes med funksjoner i JavaScript
