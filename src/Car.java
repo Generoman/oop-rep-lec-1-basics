@@ -20,8 +20,8 @@ public class Car {
 
         // Toppfarta kan ikke være 0 eller negativ.
         // Derfor er nedre grense satt på 0,1 km/t.
-        // Siden Java er på engelsk, brukes punktum istedenfor komma i desimaltall.
         if (topSpeed <= 0) {
+        // Siden Java er på engelsk, brukes punktum istedenfor komma i desimaltall.
             this.topSpeed = 0.1;
         // Høyeste toppfart jeg kunne finne på en bil er 447,19 km/t.
         // Derfor setter jeg øvre grense på 447.19 her.
